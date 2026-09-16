@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-serif: var(--font-newsreader);
+  --font-sans: var(--font-karla);
+  --font-mono: var(--font-plex-mono);
+
+  --color-ink: #24160f;
+  --color-umber: #4a2c1d;
+  --color-umber-light: #6b4530;
+  --color-terracotta-dark: #a2492b;
+  --color-terracotta: #c0603c;
+  --color-terracotta-deep: #8a3d23;
+  --color-sand: #e4d8c8;
+  --color-sand-line: #efe5d6;
+  --color-border: #dbcbb6;
+  --color-hover: #f0e6d8;
+  --color-shell: #f7f1e8;
+  --color-paper: #fdfaf5;
+  --color-paper-deep: #fffdf9;
+  --color-muted: #5c4a3c;
+  --color-faint: #8c7a6b;
+  --color-taupe: #b09c88;
+  --color-cream: #e8dacb;
+  --color-cream-dim: #c9b5a3;
+  --color-clay: #d8c6b4;
+  --color-apricot: #e0a183;
+  --color-blush: #fbe4d8;
+  --color-blush-border: #e8b79c;
+}
+
+body {
+  background: var(--color-shell);
+  color: var(--color-ink);
+  font-family: var(--font-sans), Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+}
+
+.font-serif {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+.font-mono {
+  font-family: var(--font-mono), monospace;
+}
+
+.stripe-placeholder {
+  background-color: #efe5d6;
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(160, 130, 100, 0.14) 0 2px,
+    transparent 2px 9px
+  );
+}
