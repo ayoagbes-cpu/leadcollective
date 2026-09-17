@@ -4,7 +4,7 @@ import { Eyebrow } from "@/components/eyebrow";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { SlotMeter } from "@/components/slot-meter";
 import { getSlotState } from "@/lib/pick-my-brain";
-import { testimonials } from "@/lib/data";
+import { testimonials, programmePricing } from "@/lib/data";
 
 const cohortOpen = true;
 const enrolLabel = cohortOpen ? "Join the spring cohort" : "Cohort full — join the waitlist";
@@ -30,8 +30,8 @@ export default function HomePage() {
             <Button href="/build-your-business-right" variant="primary">
               Start the programme
             </Button>
-            <Button href="/contract-treasury" variant="text">
-              or browse the Contract Treasury
+            <Button href="/shop" variant="text">
+              or browse the Shop
             </Button>
           </div>
         </div>
@@ -42,28 +42,36 @@ export default function HomePage() {
 
       {/* Offerings */}
       <section id="offerings" className="max-w-[1240px] mx-auto px-10 pt-16">
-        <div className="grid gap-px bg-sand border border-sand rounded-[4px] overflow-hidden" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))" }}>
+        <div className="grid gap-px bg-sand border border-sand rounded-[4px] overflow-hidden" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))" }}>
           <div className="bg-paper px-[30px] pt-[34px] pb-[30px]">
             <Eyebrow className="mb-[18px]">01 · TEMPLATES</Eyebrow>
             <h3 className="font-serif font-normal text-[27px] leading-tight m-0 mb-3 text-ink">The Contract Treasury</h3>
             <p className="text-[15px] leading-snug text-muted m-0 mb-[22px]">
-              Lawyer-drafted templates you download today and send tomorrow. £45–£180.
+              Lawyer-drafted templates you download today and send tomorrow. £15–£60.
             </p>
-            <ArrowLink href="/contract-treasury">Browse templates →</ArrowLink>
+            <ArrowLink href="/shop">Browse templates →</ArrowLink>
           </div>
           <div className="bg-paper px-[30px] pt-[34px] pb-[30px]">
-            <Eyebrow className="mb-[18px]">02 · PROGRAMME</Eyebrow>
+            <Eyebrow className="mb-[18px]">02 · TEMPLATES</Eyebrow>
+            <h3 className="font-serif font-normal text-[27px] leading-tight m-0 mb-3 text-ink">The Governance Toolkit</h3>
+            <p className="text-[15px] leading-snug text-muted m-0 mb-[22px]">
+              Board packs, terms of reference and trustee onboarding, ready to adapt. £15–£60.
+            </p>
+            <ArrowLink href="/shop?audience=boards">Browse for boards →</ArrowLink>
+          </div>
+          <div className="bg-paper px-[30px] pt-[34px] pb-[30px]">
+            <Eyebrow className="mb-[18px]">03 · PROGRAMME</Eyebrow>
             <h3 className="font-serif font-normal text-[27px] leading-tight m-0 mb-3 text-ink">Build Your Business Right</h3>
             <p className="text-[15px] leading-snug text-muted m-0 mb-[22px]">
-              Eight modules, the book, and your whole legal base built in public. From £495.
+              Eight modules, the book, and your whole legal base built in public. From £{programmePricing.selfPaced}.
             </p>
             <ArrowLink href="/build-your-business-right">See the curriculum →</ArrowLink>
           </div>
           <div className="bg-paper px-[30px] pt-[34px] pb-[30px]">
-            <Eyebrow className="mb-[18px]">03 · ADVICE</Eyebrow>
+            <Eyebrow className="mb-[18px]">04 · ADVICE</Eyebrow>
             <h3 className="font-serif font-normal text-[27px] leading-tight m-0 mb-3 text-ink">Pick My Brain</h3>
             <p className="text-[15px] leading-snug text-muted m-0 mb-[22px]">
-              One hour, one decision, {slot.capWord} a month. £250. {slot.slotSentence}.
+              {slot.durationMinutes} minutes, one decision, {slot.capWord} a month. £{slot.price}. {slot.slotSentence}.
             </p>
             <ArrowLink href="/pick-my-brain">Check availability →</ArrowLink>
           </div>
@@ -119,11 +127,11 @@ export default function HomePage() {
             <div className="flex gap-10 flex-wrap mb-[38px]">
               <div>
                 <div className="text-[13px] tracking-[0.06em] uppercase text-clay mb-1.5">Self-paced</div>
-                <div className="font-serif text-[34px] leading-none">£495</div>
+                <div className="font-serif text-[34px] leading-none">£{programmePricing.selfPaced}</div>
               </div>
               <div className="border-l border-[#6B4530] pl-10">
-                <div className="text-[13px] tracking-[0.06em] uppercase text-clay mb-1.5">Spring cohort</div>
-                <div className="font-serif text-[34px] leading-none">£1,850</div>
+                <div className="text-[13px] tracking-[0.06em] uppercase text-clay mb-1.5">Cohort · intro price</div>
+                <div className="font-serif text-[34px] leading-none">£{programmePricing.cohort}</div>
               </div>
             </div>
             <Button href="/build-your-business-right" variant="primary" className="bg-shell text-umber hover:bg-paper">
@@ -142,9 +150,9 @@ export default function HomePage() {
               {slot.slotHeadline}
             </h2>
             <p className="text-base leading-relaxed text-muted m-0 max-w-[30em]">
-              Sixty minutes, one written follow-up, and a decision you stop carrying around.{" "}
-              {slot.capWord} a month, by invitation of the calendar rather than the marketing
-              department.
+              {slot.durationMinutes} minutes, one written follow-up, and a decision you stop
+              carrying around. {slot.capWord} a month, by invitation of the calendar rather than
+              the marketing department.
             </p>
           </div>
           <div>
@@ -177,11 +185,11 @@ export default function HomePage() {
       <section className="max-w-[1240px] mx-auto px-10 py-[88px]">
         <div className="grid gap-14 items-end" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
           <div>
-            <Eyebrow tone="faint" className="mb-4">Also available</Eyebrow>
-            <h2 className="font-serif font-light text-[34px] leading-tight m-0 mb-3.5 text-ink">Governance &amp; boards</h2>
+            <Eyebrow tone="faint" className="mb-4">For toolkit buyers</Eyebrow>
+            <h2 className="font-serif font-light text-[34px] leading-tight m-0 mb-3.5 text-ink">Governance &amp; Boards Advisory</h2>
             <p className="text-base leading-relaxed text-muted m-0 mb-5 max-w-[32em]">
-              Board effectiveness reviews, trustee inductions and chair coaching for organisations
-              that want a sharper conversation around the table.
+              Board effectiveness reviews, trustee inductions and chair coaching — the natural next
+              step once a Governance Toolkit template isn&rsquo;t quite enough.
             </p>
             <ArrowLink href="/governance">For boards and trustees →</ArrowLink>
           </div>

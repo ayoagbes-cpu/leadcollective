@@ -3,7 +3,8 @@ import { pickMyBrainConfig } from "./data";
 const CAP_WORDS = ["no", "one", "two", "three", "four", "five", "six", "seven", "eight"];
 
 export function getSlotState() {
-  const { cap, taken, monthLabel, releaseLabel, slotDates } = pickMyBrainConfig;
+  const { cap, taken, price, durationMinutes, monthLabel, releaseLabel, slotDates } =
+    pickMyBrainConfig;
   const left = cap - taken;
   const isFull = left <= 0;
 
@@ -21,6 +22,8 @@ export function getSlotState() {
     left,
     isFull,
     hasRoom: !isFull,
+    price,
+    durationMinutes,
     monthLabel,
     releaseLabel,
     capWord,
@@ -30,7 +33,7 @@ export function getSlotState() {
       : left === 1
         ? "One slot left this month."
         : `${left} slots left this month.`,
-    brainCta: isFull ? "Join the waitlist" : "Book a slot · £250",
+    brainCta: isFull ? "Join the waitlist" : `Book a slot · £${price}`,
     filled: Array.from({ length: taken }),
     empty: Array.from({ length: left }),
     slots,

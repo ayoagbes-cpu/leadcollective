@@ -22,7 +22,7 @@ export async function generateMetadata({
   const product = await getProduct(slug);
   if (!product) return {};
   return {
-    title: `${product.title} — The Contract Treasury`,
+    title: `${product.title} — Lead Collective Shop`,
     description: product.blurb,
   };
 }
@@ -67,7 +67,8 @@ export default async function ProductPage({
 
         <div>
           <Eyebrow className="mb-3">
-            {product.stage} · {product.category}
+            {product.audience}
+            {product.stage ? ` · ${product.stage}` : ""} · {product.category}
           </Eyebrow>
           <h1
             className="font-serif font-light m-0 mb-3.5 text-ink"

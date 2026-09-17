@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Eyebrow } from "@/components/eyebrow";
 import { EnquiryForm } from "@/components/enquiry-form";
+import { ArrowLink } from "@/components/arrow-link";
 
 export const metadata: Metadata = {
-  title: "Governance & Boards — Lead Collective",
+  title: "Governance & Boards Advisory — Lead Collective",
   description:
-    "Board effectiveness reviews, trustee inductions and chair coaching for organisations that want a sharper conversation around the table.",
+    "Board effectiveness reviews, trustee inductions and chair coaching — the natural next step after a Governance Toolkit template.",
 };
 
 const offerings = [
@@ -27,18 +28,23 @@ export default function GovernancePage() {
   return (
     <div className="max-w-[1240px] mx-auto px-10 pt-16 pb-[110px]">
       <Eyebrow tone="faint" className="mb-4">
-        Also available
+        For toolkit buyers, and beyond
       </Eyebrow>
       <h1
         className="font-serif font-light m-0 mb-[18px] text-ink"
         style={{ fontSize: "clamp(34px, 4.6vw, 52px)", lineHeight: 1.06, letterSpacing: "-0.02em" }}
       >
-        Governance &amp; boards
+        Governance &amp; Boards Advisory
       </h1>
-      <p className="text-[17px] leading-relaxed text-muted max-w-[34em] m-0 mb-14">
+      <p className="text-[17px] leading-relaxed text-muted m-0 mb-4 max-w-[34em]">
         Board effectiveness reviews, trustee inductions and chair coaching for organisations that
         want a sharper conversation around the table — drawn from twenty years in financial
-        services and a decade chairing and sitting on boards.
+        services and a decade chairing and sitting on boards. This is a small number of
+        engagements a year, usually picked up by a board or trustee body that started with a
+        template from the Governance Toolkit and wants more.
+      </p>
+      <p className="text-[15px] leading-relaxed text-muted m-0 mb-14 max-w-[34em]">
+        Not sure advisory is the right starting point? <ArrowLink href="/shop?audience=boards">Browse the Governance Toolkit →</ArrowLink>
       </p>
 
       <div className="grid gap-6 mb-16" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}>

@@ -114,11 +114,11 @@ export default function AppPage() {
                 </div>
               </div>
               <div className="font-serif text-[27px] mb-1">Pick My Brain</div>
-              <div className="text-[13px] text-faint mb-[18px]">October · 4 slots · £250</div>
+              <div className="text-[13px] text-faint mb-[18px]">October · 4 slots · £120</div>
               {[
-                { day: "Tue 6 Oct", time: "10:00–11:00 BST", state: "Available", taken: false },
-                { day: "Thu 15 Oct", time: "14:00–15:00 BST", state: "Available", taken: false },
-                { day: "Wed 21 Oct", time: "09:00–10:00 BST", state: "Taken", taken: true },
+                { day: "Tue 6 Oct", time: "10:00–10:30 BST", state: "Available", taken: false },
+                { day: "Thu 15 Oct", time: "14:00–14:30 BST", state: "Available", taken: false },
+                { day: "Wed 21 Oct", time: "09:00–09:30 BST", state: "Taken", taken: true },
               ].map((s) => (
                 <div
                   key={s.day}

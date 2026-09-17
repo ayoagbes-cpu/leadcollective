@@ -12,7 +12,7 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <div className="bg-paper border border-sand rounded-[4px] overflow-hidden flex flex-col">
       <Link
-        href={`/contract-treasury/${product.slug}`}
+        href={`/shop/${product.slug}`}
         className="stripe-placeholder flex items-end p-3.5"
         style={{ aspectRatio: "4 / 3" }}
       >
@@ -21,8 +21,8 @@ export function ProductCard({ product }: { product: Product }) {
         </div>
       </Link>
       <div className="p-6 flex flex-col gap-2.5 flex-1">
-        <Eyebrow className="text-[10px] tracking-[0.12em]">{product.stage}</Eyebrow>
-        <Link href={`/contract-treasury/${product.slug}`}>
+        <Eyebrow className="text-[10px] tracking-[0.12em]">{product.stage ?? product.category}</Eyebrow>
+        <Link href={`/shop/${product.slug}`}>
           <h3 className="font-serif font-normal text-[22px] leading-tight m-0 text-ink hover:text-terracotta-dark">
             {product.title}
           </h3>

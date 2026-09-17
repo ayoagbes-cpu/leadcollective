@@ -3,11 +3,11 @@ import { Eyebrow } from "@/components/eyebrow";
 import { BookingButton } from "@/components/booking-button";
 import { WaitlistForm } from "@/components/waitlist-form";
 import { getSlotState } from "@/lib/pick-my-brain";
-import { included, excluded } from "@/lib/data";
+import { included, excluded, pickMyBrainConfig } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Pick My Brain — one hour, one decision",
-  description: "£250 for sixty minutes and a written follow-up. A hard monthly cap, by design.",
+  title: `Pick My Brain — ${pickMyBrainConfig.durationMinutes} minutes, one decision`,
+  description: `£${pickMyBrainConfig.price} for ${pickMyBrainConfig.durationMinutes} minutes and a written follow-up. A hard monthly cap, by design.`,
 };
 
 export default function PickMyBrainPage() {
@@ -15,7 +15,7 @@ export default function PickMyBrainPage() {
 
   return (
     <div className="max-w-[1240px] mx-auto px-10 pt-16 pb-[110px]">
-      <Eyebrow className="mb-[18px]">One hour, one decision</Eyebrow>
+      <Eyebrow className="mb-[18px]">{slot.durationMinutes} minutes, one decision</Eyebrow>
       <h1
         className="font-serif font-light m-0 mb-[18px] text-ink"
         style={{ fontSize: "clamp(34px, 4.6vw, 52px)", lineHeight: 1.06, letterSpacing: "-0.02em" }}
@@ -30,9 +30,9 @@ export default function PickMyBrainPage() {
         can prepare for properly while doing the rest of my work.
       </p>
       <p className="text-[17px] leading-relaxed text-muted max-w-[34em] m-0 mb-12">
-        £250 for sixty minutes and a written follow-up. Slots open on the first working day of the
-        month. When they are gone, they are gone until the next one — I would rather turn you away
-        than arrive unprepared.
+        £{slot.price} for {slot.durationMinutes} minutes and a written follow-up. Slots open on
+        the first working day of the month, released in a single batch. When they are gone, they
+        are gone until the next one — I would rather turn you away than arrive unprepared.
       </p>
 
       <div className="grid gap-8 items-start" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))" }}>

@@ -38,7 +38,8 @@ export default function SpeakingPage() {
         Keynotes and panels on founder governance, women in leadership and building durable
         businesses.
       </p>
-      <div className="font-serif text-[28px] text-ink mb-14">Day rates from £2,500</div>
+      <div className="font-serif text-[28px] text-ink mb-3">Day rates from £2,500</div>
+      <div className="text-sm text-muted mb-14">Extended payment terms available for booked engagements.</div>
 
       <div className="grid gap-12 mb-16" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
         <div>

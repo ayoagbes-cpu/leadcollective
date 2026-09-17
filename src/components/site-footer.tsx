@@ -39,7 +39,8 @@ export function SiteFooter() {
         <FooterColumn
           title="Work with me"
           links={[
-            { href: "/contract-treasury", label: "The Contract Treasury" },
+            { href: "/shop", label: "The Contract Treasury" },
+            { href: "/shop?audience=boards", label: "The Governance Toolkit" },
             { href: "/build-your-business-right", label: "Build Your Business Right" },
             { href: "/pick-my-brain", label: "Pick My Brain" },
           ]}
@@ -47,7 +48,7 @@ export function SiteFooter() {
         <FooterColumn
           title="Organisations"
           links={[
-            { href: "/governance", label: "Governance & Boards" },
+            { href: "/governance", label: "Governance & Boards Advisory" },
             { href: "/speaking", label: "Speaking" },
             { href: "/about", label: "About" },
           ]}
@@ -55,7 +56,7 @@ export function SiteFooter() {
         <FooterColumn
           title="Detail"
           links={[
-            { href: "/contract-treasury", label: "Template licence terms" },
+            { href: "/shop", label: "Template licence terms" },
             { href: "/contact", label: "Privacy" },
             { href: "/contact", label: "Contact" },
             { href: "/app", label: "Companion app" },

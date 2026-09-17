@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/button";
 
 const NAV = [
-  { href: "/contract-treasury", label: "Contract Treasury" },
+  { href: "/shop", label: "Shop" },
   { href: "/build-your-business-right", label: "The programme" },
   { href: "/governance", label: "Governance" },
   { href: "/about", label: "About" },
