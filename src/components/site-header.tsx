@@ -4,7 +4,7 @@ import { Button } from "@/components/button";
 const NAV = [
   { href: "/shop", label: "Shop" },
   { href: "/build-your-business-right", label: "The programme" },
-  { href: "/governance", label: "Governance" },
+  { href: "/speaking", label: "Speaking" },
   { href: "/about", label: "About" },
 ];
 

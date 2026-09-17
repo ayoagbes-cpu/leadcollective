@@ -46,9 +46,8 @@ export function SiteFooter() {
           ]}
         />
         <FooterColumn
-          title="Organisations"
+          title="More"
           links={[
-            { href: "/governance", label: "Governance & Boards Advisory" },
             { href: "/speaking", label: "Speaking" },
             { href: "/about", label: "About" },
           ]}

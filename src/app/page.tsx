@@ -181,27 +181,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Governance & Speaking teaser */}
+      {/* Speaking teaser */}
       <section className="max-w-[1240px] mx-auto px-10 py-[88px]">
-        <div className="grid gap-14 items-end" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
-          <div>
-            <Eyebrow tone="faint" className="mb-4">For toolkit buyers</Eyebrow>
-            <h2 className="font-serif font-light text-[34px] leading-tight m-0 mb-3.5 text-ink">Governance &amp; Boards Advisory</h2>
-            <p className="text-base leading-relaxed text-muted m-0 mb-5 max-w-[32em]">
-              Board effectiveness reviews, trustee inductions and chair coaching — the natural next
-              step once a Governance Toolkit template isn&rsquo;t quite enough.
-            </p>
-            <ArrowLink href="/governance">For boards and trustees →</ArrowLink>
-          </div>
-          <div>
-            <Eyebrow tone="faint" className="mb-4">Stages &amp; keynotes</Eyebrow>
-            <h2 className="font-serif font-light text-[34px] leading-tight m-0 mb-3.5 text-ink">Speaking</h2>
-            <p className="text-base leading-relaxed text-muted m-0 mb-5 max-w-[32em]">
-              Keynotes and panels on founder governance, women in leadership and building durable
-              businesses. Day rates from £2,500.
-            </p>
-            <ArrowLink href="/speaking">Enquire about a date →</ArrowLink>
-          </div>
+        <div className="max-w-[32em]">
+          <Eyebrow tone="faint" className="mb-4">Stages &amp; keynotes</Eyebrow>
+          <h2 className="font-serif font-light text-[34px] leading-tight m-0 mb-3.5 text-ink">Speaking</h2>
+          <p className="text-base leading-relaxed text-muted m-0 mb-5">
+            Keynotes and panels on founder governance, women in leadership and building durable
+            businesses. Day rates from £2,500.
+          </p>
+          <ArrowLink href="/speaking">Enquire about a date →</ArrowLink>
         </div>
       </section>
     </div>
